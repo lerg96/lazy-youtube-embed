@@ -1,4 +1,4 @@
-class LazyYoutubeEmbed {
+ class LazyYoutubeEmbed {
     constructor() {
       
      let loadThumb = (entries, observer) => {
@@ -12,13 +12,13 @@ class LazyYoutubeEmbed {
         let quality = 'sd';
         if (connection) {
           switch(connection.effectiveType) {
-            case '4g': quality = 'maxres'; break;
-            case '3g': quality = 'sd';break;
+            case '4g': quality = 'hq'; break;
+            case '3g': quality = 'hq';break;
             default: quality = 'hq';
           }
         }
         
-          thumbNode.setAttribute('src', `https://img.youtube.com/vi/${ytId}/${quality}default.jpg`);
+          thumbNode.setAttribute('src', `https://i.ytimg.com/vi_webp/${ytId}/${quality}default.webp`);
           node.innerHTML = '';
           node.appendChild(thumbNode);
     
@@ -63,4 +63,5 @@ class LazyYoutubeEmbed {
     return;
 }
 
-new LazyYoutubeEmbed();
+
+ new LazyYoutubeEmbed();
